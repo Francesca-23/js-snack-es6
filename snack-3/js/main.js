@@ -7,24 +7,21 @@ se come numeri ad esemio ho 2 e 4 devo inserire in un array nuovo l'elemento in 
 La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 */
 
-    
 
-function myFunction(){
+let arrayNomi = ['Maria', 'Bianca', 'Alice', 'Sofia', 'Giada', 'Luisa'];
 
-    let arrayNomi = ['Maria', 'Bianca', 'Alice', 'Sofia', 'Giada', 'Luisa'];
-    const number1 = 2;
-    const number2 = 5;
 
-    const newArray = arrayNomi.filter((element, index) => {
+function myFunction(array, num1, num2){
 
-        if(index > number1 && index < number2){
+    const newArray = array.filter((element, index) => {
+
+        if(index > num1 && index < num2){
             return element
         }
-
     })
 
     return newArray
 }
 
-console.log(myFunction())
+console.log(myFunction(arrayNomi, 1, 5))
 
