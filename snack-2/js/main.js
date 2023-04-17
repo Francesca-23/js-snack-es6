@@ -9,7 +9,7 @@ Punti fatti e falli subiti.
 Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
-const squadre = [
+let squadre = [
     {
         nome: 'Napoli',
         puntiFatti: 0,
@@ -17,56 +17,56 @@ const squadre = [
     },
     {
         nome: 'Juventus',
-        puntiFatti: null,
-        falliSubiti: null
+        puntiFatti: 0,
+        falliSubiti: 0
     },
     {
         nome: 'Milan',
-        puntiFatti: null,
-        falliSubiti: null
+        puntiFatti: 0,
+        falliSubiti: 0
     },
     {
         nome: 'Liverpool',
-        puntiFatti: null,
-        falliSubiti: null
+        puntiFatti: 0,
+        falliSubiti: 0
     },
     {
         nome: 'Inter',
-        puntiFatti: null,
-        falliSubiti: null
+        puntiFatti: 0,
+        falliSubiti: 0
     },
     {
         nome: 'Barcellona',
-        puntiFatti: null,
-        falliSubiti: null
+        puntiFatti: 0,
+        falliSubiti: 0
     },
 ]
 
 
 function random(){
-
     for(let i = 0; i < 20; i++){
-        return Math.floor(Math.random()* 20);
+        return Math.floor(Math.random()* 20) + 1;
     }
 }
 
 
-    squadre.forEach(element => {
-        
-        let {puntiFatti, falliSubiti} = element;
-            
-        puntiFatti = random();
-        falliSubiti = random();
-        console.log(puntiFatti, falliSubiti)
+squadre.forEach((element) => {
+ 
+    element.puntiFatti = random()
+    element.falliSubiti = random()
 
-        return falliSubiti
-    });
+})
 
-    const newArray = squadre.map((element) => {
+console.log(squadre)
 
-        let {nome, falliSubiti} = element;
-        console.log(nome, falliSubiti)
-    })
+
+let newArray = squadre.map((element) => {
+
+    let {nome, falliSubiti} = element;
+    return {nome, falliSubiti}
+})
+
+console.log(newArray)
 
 
 
